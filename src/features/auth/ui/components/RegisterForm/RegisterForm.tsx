@@ -2,12 +2,9 @@ import { useState } from 'react'
 import Input from '../../../../../shared/ui/Input/Input.component'
 import Button from '../../../../../shared/ui/Button/Button.component'
 import styles from './RegisterForm.module.css'
+import type { RegisterCredentials } from '../../../domain/register.entity'
 
-interface RegisterFormValues {
-  name: string
-  email: string
-  birthDate: string
-  password: string
+interface RegisterFormValues extends RegisterCredentials {
   confirmPassword: string
 }
 

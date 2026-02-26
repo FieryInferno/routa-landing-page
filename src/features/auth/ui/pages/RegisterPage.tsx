@@ -1,8 +1,13 @@
 import styles from './RegisterPage.module.css'
 import ImageSlider from '../../../../shared/ui/ImageSlider/ImageSlider.component'
 import RegisterForm from '../components/RegisterForm/RegisterForm'
+import { useRegisterUseCase } from '../hooks/registerUseCase.context'
+import { useRegister } from '../hooks/useRegister.hook'
 
 export default function RegisterPage() {
+  const registerUseCase = useRegisterUseCase()
+  const { register, isLoading, error } = useRegister(registerUseCase)
+
   return (
     <div className={styles.page}>
       <div className={styles.card}>
@@ -14,7 +19,7 @@ export default function RegisterPage() {
           <h1 className={styles.title}>Daftar</h1>
           <p className={styles.subtitle}>Buat akun routa kamu sekarang!</p>
         </div>
-        <RegisterForm register={(values) => void values} isLoading={false} error={null} />
+        <RegisterForm register={register} isLoading={isLoading} error={error} />
       </div>
 
       <aside className={styles.visual}>
