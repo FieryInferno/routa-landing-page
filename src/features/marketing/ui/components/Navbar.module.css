@@ -3,6 +3,9 @@
 a {
   font-weight: bold;
 }
+.logo {
+  width: 5rem;
+}
 /* Mobile-first approach */
 .navbar {
   max-width: 1200px;

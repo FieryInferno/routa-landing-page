@@ -1,6 +1,7 @@
 import style from './HomePage.module.css'
 import NavBar from '../components/Navbar.component'
 import Button from '../components/Button.component'
+import FAQ from '../components/FAQ.component'
 
 export default function HomePage() {
   return (
@@ -79,13 +80,13 @@ export default function HomePage() {
                 AI membantu roadmap belajar relevan dan terarah.
               </p>
             </div>
-            <div className={style['feature-images']}>
+            {/* <div className={style['feature-images']}>
               <img
                 src="../../../../../fitur-utama-1.webp"
                 className={style['placeholder-img']}
                 alt="AI membantu roadmap belajar relevan dan terarah."
               />
-            </div>
+            </div> */}
           </div>
           <div className={`${style.feature} ${style.reverse}`}>
             <div>
@@ -102,14 +103,22 @@ export default function HomePage() {
                 Pantau kemajuanmu selangkah demi selangkah dan ekspor jalur belajarmu ke format PDF.
               </p>
             </div>
-            <div className={style['feature-images']}>
+            {/* <div className={style['feature-images']}>
               <img
                 src="../../../../../fitur-utama-2.webp"
                 className={style['placeholder-img']}
                 alt="Pantau kemajuanmu selangkah demi selangkah dan ekspor jalur belajarmu ke format PDF."
               />
-            </div>
+            </div> */}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section>
+        <div className={`${style['section-inner']} ${style['faq-section']}`}>
+          <div className={style['faq-label']}>Frequently Asked Question</div>
+          <FAQ />
         </div>
       </section>
 
