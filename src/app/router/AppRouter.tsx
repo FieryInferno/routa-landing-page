@@ -29,7 +29,11 @@ const AppRouter = () => (
       <Route path="/register" element={<RegisterPage />} />
       <Route
         path="/dashboard"
-        element={<Dashboard />}
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
       />
     </Routes>
   </BrowserRouter>

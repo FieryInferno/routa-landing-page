@@ -28,7 +28,9 @@ export default function Dashboard() {
         <section className={styles.contentSection}>
           <div className={styles.headingRow}>
             <h2 className={styles.title}>Welcome Back, Rizky! 👋🏻</h2>
-            <div className={styles.personalizedPill}>Personalized for : Backend Developer 3-5 YOE</div>
+            <div className={styles.personalizedPill}>
+              Personalized for : Backend Developer 3-5 YOE
+            </div>
           </div>
 
           <div className={styles.boardWrap}>
