@@ -12,7 +12,7 @@ export default function RegisterPage() {
     <div className={styles.page}>
       <div className={styles.card}>
         <div className={styles.brand}>
-          <img src="../../../../../logo-routa.webp" alt="Routa Logo" />
+          <img src="../../../../../logo-routa.webp" alt="Routa Logo" className={styles.logo} />
         </div>
 
         <div className={styles.header}>

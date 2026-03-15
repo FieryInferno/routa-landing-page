@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import style from './NavBar.module.css'
 import Button from './Button.component'
 
@@ -22,7 +23,9 @@ export default function NavBar() {
         <a href="#">Langganan</a>
       </div>
       <div className={style['nav-actions']}>
-        <Button variant="outline">Masuk</Button>
+        <Link to="/login">
+          <Button variant="outline">Masuk</Button>
+        </Link>
         <Button variant="primary">Mulai Coba Gratis</Button>
       </div>
 
@@ -50,7 +53,9 @@ export default function NavBar() {
             </a>
           </div>
           <div className={style['mobile-actions']}>
-            <Button variant="outline">Masuk</Button>
+            <Link to="/login">
+              <Button variant="outline">Masuk</Button>
+            </Link>
             <Button variant="primary">Mulai Coba Gratis</Button>
           </div>
         </div>
