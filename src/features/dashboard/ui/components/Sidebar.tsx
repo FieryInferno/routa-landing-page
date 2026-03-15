@@ -1,11 +1,13 @@
 import styles from './Sidebar.module.css'
+import SidebarIcon from './SidebarIcon.component'
+import { Link } from 'react-router-dom'
 
 const navItems = [
-  { label: 'Dashboard', isActive: true },
-  { label: 'Generate Roadmap', isActive: false },
-  { label: 'My Roadmaps', isActive: false },
-  { label: 'Progress', isActive: false },
-  { label: 'Lainnya', isActive: false },
+  { label: 'Dashboard', isActive: true, icon: 'dashboard' },
+  { label: 'Generate Roadmap', isActive: false, icon: 'generate-roadmap' },
+  { label: 'My Roadmaps', isActive: false, icon: 'my-roadmaps' },
+  { label: 'Progress', isActive: false, icon: 'progress' },
+  { label: 'Lainnya', isActive: false, icon: 'more' },
 ]
 
 interface SidebarProps {
@@ -20,19 +22,23 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <div className={styles.brandRow}>
-          <div className={styles.brandMark}>R</div>
-          <h1 className={styles.brandName}>Routa</h1>
+          <img src="../../../../logo-routa.webp" alt="Routa Logo" className={styles.logo} />
+          <button className={styles.closeButton} onClick={onClose} aria-label="Close sidebar">
+            <span className={styles.closeIcon} aria-hidden="true">
+              x
+            </span>
+          </button>
         </div>
 
         <nav className={styles.nav} aria-label="Dashboard menu">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href="#"
+              to="#"
               className={`${styles.navItem} ${item.isActive ? styles.active : ''}`}
             >
-              {item.label}
-            </a>
+              <SidebarIcon iconName={item.icon} isActive={item.isActive} /> {item.label}
+            </Link>
           ))}
         </nav>
 

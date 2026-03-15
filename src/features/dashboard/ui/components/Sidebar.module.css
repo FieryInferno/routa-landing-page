@@ -12,7 +12,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 17rem;
+  width: 14rem;
   height: 100dvh;
   background: #f8fafc;
   border-right: 1px solid #e5e7eb;
@@ -35,6 +35,25 @@
   gap: 0.5rem;
 }
 
+.closeButton {
+  margin-left: auto;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--grey-light);
+  border-radius: 0.5rem;
+  background: var(--white);
+  color: var(--grey-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.closeIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 .brandMark {
   width: 1.5rem;
   height: 1.5rem;
@@ -45,6 +64,10 @@
   font-weight: 700;
   color: var(--white);
   background: var(--primary);
+}
+
+.logo {
+  width: 5rem;
 }
 
 .brandName {
@@ -61,15 +84,18 @@
 }
 
 .navItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   border-radius: 0.5rem;
   padding: 0.6rem 0.75rem;
   font-size: 0.94rem;
-  color: var(--grey-dark);
+  color: #5e5e5e;
 }
 
 .active {
-  background: #d6f4f8;
-  color: var(--primary-dark);
+  background: var(--primary-light);
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -94,37 +120,18 @@
   color: var(--dark);
 }
 
-@media (width >= 40rem) {
-  .sidebar {
-    width: 17.5rem;
-  }
-}
-
-@media (width >= 48rem) {
+@media (width >= 64rem) {
   .sidebar {
     transform: translateX(0);
+    width: 14rem;
+    padding: 1.5rem 1rem;
   }
 
   .backdrop {
     display: none;
   }
-}
 
-@media (width >= 64rem) {
-  .sidebar {
-    width: 18rem;
-    padding: 1.5rem 1rem;
-  }
-}
-
-@media (width >= 80rem) {
-  .sidebar {
-    width: 18.5rem;
-  }
-}
-
-@media (width >= 96rem) {
-  .sidebar {
-    width: 19rem;
+  .closeButton {
+    display: none;
   }
 }
