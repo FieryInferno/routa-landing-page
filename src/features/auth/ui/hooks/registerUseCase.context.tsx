@@ -1,14 +1,12 @@
-import { createContext, useContext } from 'react'
-import type { RegisterUseCase } from '../../domain/register.usecase'
-
-export const RegisterUseCaseContext = createContext<RegisterUseCase | null>(null)
+import { useContext } from 'react'
+import AuthUseCaseContext from '../../../../app/providers/AuthUseCase.context'
 
 export const useRegisterUseCase = () => {
-  const useCase = useContext(RegisterUseCaseContext)
+  const context = useContext(AuthUseCaseContext)
 
-  if (!useCase) {
+  if (!context) {
     throw new Error('RegisterUseCaseProvider is missing')
   }
 
-  return useCase
+  return context.registerUseCase
 }

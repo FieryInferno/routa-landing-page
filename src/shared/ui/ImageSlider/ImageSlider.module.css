@@ -48,7 +48,7 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: #d1d5db;
+  background: var(--grey-light);
   border: none;
   line-height: 0;
   cursor: pointer;
@@ -56,7 +56,7 @@
 }
 
 .dot:hover {
-  background: #b4b3b3;
+  background: var(--grey-medium);
 }
 
 .dotActive {
@@ -73,6 +73,6 @@
   }
 
   .dotActive {
-    background: #ffffff;
+    background: var(--white);
   }
 }

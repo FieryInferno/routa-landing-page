@@ -1,3 +1,5 @@
+@import '../../../../styles/variable.css';
+
 .btn {
   border-radius: 999px;
   font-size: 14px;
@@ -6,18 +8,18 @@
 }
 
 .btn-outline {
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--grey-light);
   background: transparent;
-  color: #42c2cf;
+  color: var(--primary);
 }
 .btn-outline:hover {
-  background: #42c2cf;
+  background: var(--primary);
   color: white;
   border: none;
 }
 
 .btn-primary {
-  background: #42c2cf;
+  background: var(--primary);
   color: white;
   border: none;
 }

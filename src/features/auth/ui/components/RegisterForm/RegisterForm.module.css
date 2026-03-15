@@ -1,3 +1,5 @@
+@import '../../../../../styles/variable.css';
+
 .form {
   display: flex;
   flex-direction: column;
@@ -12,30 +14,30 @@
 
 .dateLabel {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--grey-medium);
 }
 
 .dateInput {
   width: 100%;
   padding: 14px 12px;
   border-radius: 12px;
-  border: 1px solid #d1d5db;
-  background: #ffffff;
+  border: 1px solid var(--grey-light);
+  background: var(--white);
   font-size: 15px;
-  color: #111827;
+  color: var(--dark);
 }
 
 .dateInput:focus {
   outline: none;
-  border-color: #46c3c6;
-  box-shadow: 0 0 0 2px rgba(70, 195, 198, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
 }
 
 .separator {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #9ca3af;
+  color: var(--grey-medium);
   font-size: 12px;
 }
 
@@ -44,23 +46,23 @@
   content: '';
   flex: 1;
   height: 1px;
-  background: #b4b3b3;
+  background: var(--grey-medium);
 }
 
 .signin {
   font-size: 12px;
-  color: #6b7280;
+  color: var(--grey-medium);
   text-align: center;
 }
 
 .signin a {
-  color: #42c2cf;
+  color: var(--primary);
   font-weight: 600;
 }
 
 .error {
   font-size: 12px;
-  color: #ef4444;
+  color: var(--red);
 }
 
 .googleIcon {

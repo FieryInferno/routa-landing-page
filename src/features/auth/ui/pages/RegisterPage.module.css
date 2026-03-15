@@ -2,11 +2,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #dbdbdb;
+  background: var(--grey-light);
 }
 
 .card {
-  background: #dbdbdb;
+  background: var(--grey-light);
   padding: 32px 24px 40px;
   display: flex;
   flex-direction: column;
@@ -24,21 +24,9 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: #e5e7eb;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.logoPlaceholder {
-  font-size: 10px;
-  color: #6b7280;
-}
-
-.brandName {
-  font-size: 26px;
-  font-weight: 700;
-  color: #1f2937;
 }
 
 .header {
@@ -50,12 +38,12 @@
 .title {
   font-size: 22px;
   font-weight: 700;
-  color: #111827;
+  color: var(--dark);
 }
 
 .subtitle {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--grey-medium);
 }
 
 .visual {
@@ -92,14 +80,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #111827;
-  }
-
-  .imagePlaceholder {
-    width: 100%;
-    max-width: 520px;
-    height: 520px;
-    background: #4b5563;
-    color: #f3f4f6;
+    background: var(--dark);
   }
 }

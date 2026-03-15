@@ -19,7 +19,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   color: #1f2937;
-  background: #ffffff;
+  background: var(--white);
   line-height: 1.6;
 }
 

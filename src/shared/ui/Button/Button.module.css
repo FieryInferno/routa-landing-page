@@ -1,3 +1,5 @@
+@import '../../../styles/variable.css';
+
 .btn {
   border-radius: 10px;
   font-size: 13px;
@@ -19,36 +21,36 @@
 }
 
 .primary {
-  background: #46c3c6;
-  color: #ffffff;
+  background: var(--primary);
+  color: var(--white);
 }
 
 .primary:hover:not(:disabled) {
-  background: #3ca9ac;
+  background: var(--primary-dark);
 }
 
 .primary:active:not(:disabled) {
-  background: #349499;
+  background: var(--primary-dark);
 }
 
 .secondary {
   background: transparent;
-  border: 1px solid #d1d5db;
-  color: #111827;
+  border: 1px solid var(--grey-light);
+  color: var(--dark);
 }
 
 .secondary:hover:not(:disabled) {
-  background: #f3f4f6;
+  background: var(--grey-extraLight);
 }
 
 .secondary:active:not(:disabled) {
-  background: #e5e7eb;
+  background: var(--grey-light);
 }
 
 .google {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  color: #111827;
+  background: var(--white);
+  border: 1px solid var(--grey-extraLight);
+  color: var(--dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,9 +58,9 @@
 }
 
 .google:hover:not(:disabled) {
-  background: #f9fafb;
+  background: var(--grey-extraLight);
 }
 
 .google:active:not(:disabled) {
-  background: #f3f4f6;
+  background: var(--grey-extraLight);
 }
