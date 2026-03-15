@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import styles from './Sidebar.module.css'
 import SidebarIcon from './SidebarIcon.component'
 import { Link } from 'react-router-dom'
@@ -16,13 +17,27 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+  const [isCollapsed, setIsCollapsed] = useState(false)
+
   return (
     <>
       {isOpen && <button className={styles.backdrop} onClick={onClose} aria-label="Close menu" />}
 
-      <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+      <aside
+        className={`${styles.sidebar} ${isOpen ? styles.open : ''} ${isCollapsed ? styles.collapsed : ''}`}
+      >
         <div className={styles.brandRow}>
-          <img src="../../../../logo-routa.webp" alt="Routa Logo" className={styles.logo} />
+          <img src="../../../../logo-routa-full.webp" alt="Routa Logo" className={styles.logo} />
+          <button
+            className={styles.toggleButton}
+            onClick={() => setIsCollapsed((prev) => !prev)}
+            aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+            aria-pressed={isCollapsed}
+          >
+            <span className={styles.toggleIcon} aria-hidden="true">
+              {isCollapsed ? '>' : '<'}
+            </span>
+          </button>
           <button className={styles.closeButton} onClick={onClose} aria-label="Close sidebar">
             <span className={styles.closeIcon} aria-hidden="true">
               x
@@ -37,7 +52,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               to="#"
               className={`${styles.navItem} ${item.isActive ? styles.active : ''}`}
             >
-              <SidebarIcon iconName={item.icon} isActive={item.isActive} /> {item.label}
+              <SidebarIcon iconName={item.icon} isActive={item.isActive} />
+              <span className={styles.navLabel}>{item.label}</span>
             </Link>
           ))}
         </nav>

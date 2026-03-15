@@ -1,8 +1,8 @@
 @import '../../../../styles/variable.css';
 
 .iconWrap {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.25em;
+  height: 1.25em;
   display: inline-flex;
   align-items: center;
   justify-content: center;

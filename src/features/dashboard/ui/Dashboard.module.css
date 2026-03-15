@@ -54,6 +54,7 @@
 
 .contentSection {
   background: var(--grey-extraLight);
+  padding: 0;
 }
 
 .headingRow {
@@ -186,7 +187,7 @@
   .main {
     margin-left: 14rem;
     width: calc(100% - 14rem);
-    padding: 1.8rem 2rem;
+    padding: 1.8rem 1rem;
   }
 
   .headingRow {
