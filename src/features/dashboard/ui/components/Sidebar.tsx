@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styles from './Sidebar.module.css'
 import SidebarIcon from './SidebarIcon.component'
 import { Link } from 'react-router-dom'
@@ -13,12 +12,12 @@ const navItems = [
 
 interface SidebarProps {
   isOpen: boolean
+  isCollapsed: boolean
+  onToggleCollapse: () => void
   onClose: () => void
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const [isCollapsed, setIsCollapsed] = useState(false)
-
+export default function Sidebar({ isOpen, isCollapsed, onToggleCollapse, onClose }: SidebarProps) {
   return (
     <>
       {isOpen && <button className={styles.backdrop} onClick={onClose} aria-label="Close menu" />}
@@ -30,7 +29,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <img src="../../../../logo-routa-full.webp" alt="Routa Logo" className={styles.logo} />
           <button
             className={styles.toggleButton}
-            onClick={() => setIsCollapsed((prev) => !prev)}
+            onClick={onToggleCollapse}
             aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
             aria-pressed={isCollapsed}
           >

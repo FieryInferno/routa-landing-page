@@ -88,21 +88,16 @@
 
 .board {
   min-height: 14rem;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, #8bdde2 0%, #bde9ec 50%, #81cbd7 100%);
   position: relative;
   overflow: hidden;
 }
 
-.mapHint {
-  position: absolute;
-  inset: auto 1rem 1rem auto;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #0f766e;
-  background: rgb(255 255 255 / 80%);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.45rem;
+.boardImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 .rail {
@@ -146,6 +141,22 @@
   color: var(--grey-dark);
 }
 
+.routaRivalAndRailWrap {
+  display: grid;
+  gap: 1rem;
+}
+
+.routaRivalMedia {
+  overflow: hidden;
+}
+
+.routaRivalImage {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
 @media (width >= 40rem) {
   .main {
     padding: 1.25rem;
@@ -156,11 +167,44 @@
   }
 }
 
+@media (width >= 48rem) {
+  .routaRivalAndRailWrap {
+    grid-template-columns: minmax(0, 1fr) 5.25rem;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .routaRivalMedia {
+    height: 20rem;
+  }
+
+  .routaRivalImage {
+    height: 100%;
+    margin-bottom: 0;
+    border-radius: 1rem;
+  }
+
+  .rail {
+    grid-template-columns: 5.25rem;
+    grid-auto-rows: minmax(6.25rem, auto);
+    align-content: start;
+    height: 100%;
+  }
+}
+
 @media (width >= 64rem) {
   .main {
     margin-left: 14rem;
     width: calc(100% - 14rem);
     padding: 1.5rem;
+    transition:
+      margin-left 0.2s ease,
+      width 0.2s ease;
+  }
+
+  .mainCollapsed {
+    margin-left: 4rem;
+    width: calc(100% - 4rem);
   }
 
   .menuButton {
@@ -171,15 +215,15 @@
     font-size: 2rem;
   }
 
-  .rail {
-    grid-template-columns: 5.25rem;
-    grid-auto-rows: minmax(6.25rem, auto);
-    align-content: start;
+  .board {
+    height: 20rem;
   }
+}
 
+@media (width >= 1180px) {
   .boardWrap {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: stretch;
   }
 }
 
@@ -190,6 +234,11 @@
     padding: 1.8rem 1rem;
   }
 
+  .mainCollapsed {
+    margin-left: 4rem;
+    width: calc(100% - 4rem);
+  }
+
   .headingRow {
     flex-direction: row;
     align-items: center;
@@ -197,7 +246,7 @@
   }
 
   .board {
-    min-height: 18rem;
+    min-height: 0;
   }
 }
 
@@ -206,5 +255,10 @@
     margin-left: 14rem;
     width: calc(100% - 14rem);
     padding: 2rem 2.25rem;
+  }
+
+  .mainCollapsed {
+    margin-left: 4rem;
+    width: calc(100% - 4rem);
   }
 }
