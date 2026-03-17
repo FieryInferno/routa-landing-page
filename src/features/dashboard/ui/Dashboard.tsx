@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import styles from './Dashboard.module.scss'
+import YourStats from './components/YourStats'
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -67,6 +68,10 @@ export default function Dashboard() {
               </aside>
             </div>
           </div>
+        </section>
+        <section className={styles.boardWrap}>
+          <YourStats />
+          <div>test</div>
         </section>
       </main>
     </div>

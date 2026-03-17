@@ -1,0 +1,298 @@
+@use '../../../../styles/_variable.scss' as *;
+
+$card-shadow-soft: 0 12px 30px rgb(35 35 35 / 0.08);
+$card-shadow-strong: 0 18px 40px rgb(35 35 35 / 0.08);
+
+@mixin respond-min($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+
+%progress-track {
+  position: relative;
+  width: 100%;
+  max-width: 19rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: $primary-light;
+  overflow: hidden;
+}
+
+%progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, $primary-dark 0%, $primary 100%);
+}
+
+.statsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+
+  &Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &Title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: $dark;
+  }
+}
+
+.statsAction {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: $dark;
+  opacity: 0.82;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 6.25rem;
+  border-radius: 1.5rem;
+  background: $white;
+  padding: 1.15rem 1.25rem;
+  box-shadow: $card-shadow-soft;
+
+  &Icon {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.9rem;
+    background: linear-gradient(180deg, $primary-extra-light 0%, $primary-light 100%);
+    color: $primary;
+  }
+
+  &Body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+
+  &Value {
+    font-size: 1.2rem;
+    line-height: 1.15;
+    font-weight: 700;
+    color: $dark;
+  }
+
+  &Label {
+    font-size: 0.95rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: $grey-dark;
+  }
+}
+
+.statIconSvg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.statIconImage {
+  width: 1.9rem;
+  height: 1.9rem;
+  object-fit: contain;
+}
+
+.roadmapCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 1.9rem;
+  background: $white;
+  padding: 1.5rem;
+  box-shadow: $card-shadow-strong;
+
+  .roadmapTitle {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: $dark;
+  }
+
+  .roadmapBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .roadmapMetrics {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .roadmapFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid $grey-light;
+  }
+}
+
+.progressRing {
+  --progress: 75%;
+  position: relative;
+  width: min(100%, 16.25rem);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, $white 58%, transparent 59%),
+    conic-gradient($primary 0 var(--progress), $grey-light var(--progress) 100%);
+}
+
+.progressRingInner {
+  position: absolute;
+  inset: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: $white;
+  text-align: center;
+}
+
+.progressValue {
+  font-size: clamp(2.3rem, 7vw, 3.5rem);
+  line-height: 1;
+  font-weight: 700;
+  color: $dark;
+}
+
+.progressLabel {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: $dark;
+}
+
+.metricBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.metricTitle {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: $grey-dark;
+}
+
+.metricBar,
+.levelBar {
+  @extend %progress-track;
+}
+
+.metricBarFill,
+.levelBarFill {
+  @extend %progress-fill;
+}
+
+.metricBarFill {
+  width: 38%;
+}
+
+.levelBar {
+  --level-progress: 75%;
+}
+
+.levelBarFill {
+  width: var(--level-progress);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 8.75rem;
+  color: $white;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.nextTopic {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  color: $grey-dark;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.nextTopicIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+}
+
+.nextIconSvg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.nextTopicValue {
+  font-style: italic;
+  color: $grey-dark;
+}
+
+@include respond-min($breakpoint-sm) {
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roadmapCard {
+    padding: 1.75rem 2rem;
+    
+    .roadmapBody,
+    .roadmapFooter {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .roadmapFooter {
+      justify-content: space-between;
+    }
+  }
+}
+
+@include respond-min($breakpoint-lg) {
+  .roadmapBody {
+    display: grid;
+    grid-template-columns: minmax(16rem, 18rem) minmax(0, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .progressRing {
+    margin-inline: 0;
+  }
+}
