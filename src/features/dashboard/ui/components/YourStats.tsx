@@ -123,12 +123,7 @@ function LeagueIcon() {
 function ArrowRightIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.nextIconSvg}>
-      <path
-        d="m8 6 8 6-8 6V6Z"
-        fill="currentColor"
-        stroke="currentColor"
-        strokeLinejoin="round"
-      />
+      <path d="m8 6 8 6-8 6V6Z" fill="currentColor" stroke="currentColor" strokeLinejoin="round" />
     </svg>
   )
 }
@@ -153,10 +148,7 @@ function StatIcon({ tone }: { tone: StatCardVisual }): ReactNode {
   }
 }
 
-export default function YourStats({
-  onActionClick,
-  roadmap = defaultRoadmap,
-}: YourStatsProps) {
+export default function YourStats({ onActionClick, roadmap = defaultRoadmap }: YourStatsProps) {
   const ringStyle = {
     '--progress': `${roadmap.completion}%`,
   } as CSSProperties
