@@ -2,6 +2,14 @@ import { useState } from 'react'
 import Sidebar from './components/Sidebar'
 import styles from './Dashboard.module.scss'
 import YourStats from './components/YourStats'
+import Greeting from './components/Greeting'
+import Banner from './components/Banner'
+
+const defaultBannerRailItems = [
+  { id: 'rivals', label: 'Routa Rivals', type: 'thumbnail' as const },
+  { id: 'coming-soon-1', label: 'Coming Soon', type: 'coming-soon' as const },
+  { id: 'coming-soon-2', label: 'Coming Soon', type: 'coming-soon' as const },
+]
 
 export default function Dashboard() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -33,43 +41,16 @@ export default function Dashboard() {
         </header>
 
         <section className={styles.contentSection}>
-          <div className={styles.headingRow}>
-            <h2 className={styles.title}>Welcome Back, Rizky! 👋🏻</h2>
-            <div className={styles.personalizedPill}>
-              Personalized for : Backend Developer 3-5 YOE
-            </div>
-          </div>
-
-          <div className={styles.boardWrap}>
-            <div className={styles.board}>
-              <img className={styles.boardImage} src="../../../../roadmap.webp" alt="Roadmap" />
-            </div>
-            <div className={styles.routaRivalAndRailWrap}>
-              <div className={styles.routaRivalMedia}>
-                <img
-                  className={styles.routaRivalImage}
-                  src="../../../../routa-rival.webp"
-                  alt="Routa Rival"
-                />
-              </div>
-              <aside className={styles.rail}>
-                <div className={styles.railCard}>
-                  <div className={styles.thumbnail} />
-                  <p className={styles.railLabel}>Routa Rivals</p>
-                </div>
-                <div className={styles.railCard}>
-                  <p className={styles.question}>?</p>
-                  <p className={styles.railLabel}>Coming Soon</p>
-                </div>
-                <div className={styles.railCard}>
-                  <p className={styles.question}>?</p>
-                  <p className={styles.railLabel}>Coming Soon</p>
-                </div>
-              </aside>
-            </div>
-          </div>
+          <Greeting user="Rizky" personalizedFor="Backend Developer 3-5 YOE" />
+          <Banner
+            roadmapImageSrc="/roadmap.webp"
+            roadmapImageAlt="Roadmap"
+            rivalImageSrc="/routa-rival.webp"
+            rivalImageAlt="Routa Rival"
+            railItems={defaultBannerRailItems}
+          />
         </section>
-        <section className={styles.boardWrap}>
+        <section className={styles.statsWrap}>
           <YourStats />
           <div>test</div>
         </section>
