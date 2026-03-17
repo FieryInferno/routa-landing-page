@@ -1,0 +1,260 @@
+@use '../../../../styles/_variable.scss' as *;
+
+$page-max-width: 72rem;
+$radius-lg: 1rem;
+$radius-md: 0.75rem;
+$radius-sm: 0.55rem;
+
+@mixin section-card {
+  background: $white;
+  border: 1px solid $grey-light;
+  border-radius: $radius-lg;
+  box-shadow: 0 0.6rem 1.6rem rgba(15, 118, 132, 0.08);
+  margin: 0 auto 1rem;
+  max-width: $page-max-width;
+  padding: 1.5rem;
+}
+
+.page {
+  background: linear-gradient(180deg, $primary-extra-light 0%, $white 28rem);
+  color: $dark;
+  min-height: 100vh;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.hero {
+  margin: 0 auto 2rem;
+  max-width: $page-max-width;
+}
+
+.eyebrow {
+  color: $primary-dark;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.subtitle {
+  color: $grey-dark;
+  font-size: 1.05rem;
+  margin: 0.75rem 0 0;
+  max-width: 42rem;
+}
+
+.card {
+  @include section-card;
+}
+
+.sectionTitle {
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+
+.componentGrid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.showcaseItem {
+  border: 1px solid $grey-extra-light;
+  border-radius: $radius-md;
+  padding: 1rem;
+}
+
+.itemTitle {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+}
+
+.buttonRow {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.inputStack {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.typeScale {
+  display: grid;
+  gap: 0.5rem;
+
+  .display,
+  .h1,
+  .h2,
+  .h3,
+  .bodyLarge,
+  .body,
+  .caption {
+    margin: 0;
+  }
+}
+
+.display {
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.bodyLarge {
+  font-size: 1.125rem;
+}
+
+.body {
+  font-size: 1rem;
+}
+
+.caption {
+  color: $grey-dark;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.colorGrid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.colorCard {
+  border: 1px solid $grey-light;
+  border-radius: $radius-md;
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.75rem;
+}
+
+.swatch {
+  border-radius: $radius-sm;
+  height: 4rem;
+
+  &.primaryExtraLight {
+    background: $primary-extra-light;
+  }
+
+  &.primaryLight {
+    background: $primary-light;
+  }
+
+  &.primary {
+    background: $primary;
+  }
+
+  &.primaryDark {
+    background: $primary-dark;
+  }
+
+  &.greyExtraLight {
+    background: $grey-extra-light;
+  }
+
+  &.greyMedium {
+    background: $grey-medium;
+  }
+
+  &.greyDark {
+    background: $grey-dark;
+  }
+
+  &.error {
+    background: $error;
+  }
+}
+
+.tokenName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.tokenValue {
+  color: $grey-dark;
+  font-size: 0.85rem;
+  margin: 0.1rem 0 0;
+}
+
+.spacingStack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.spacingRow {
+  align-items: center;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 5rem minmax(0, 1fr);
+}
+
+.spacingLabel {
+  color: $grey-dark;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.spacingBar {
+  background: $primary;
+  border-radius: 999px;
+  height: 0.625rem;
+
+  &.space1 {
+    width: 0.25rem;
+  }
+
+  &.space2 {
+    width: 0.5rem;
+  }
+
+  &.space3 {
+    width: 0.75rem;
+  }
+
+  &.space4 {
+    width: 1rem;
+  }
+
+  &.space6 {
+    width: 1.5rem;
+  }
+
+  &.space8 {
+    width: 2rem;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .componentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .colorGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

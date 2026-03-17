@@ -72,7 +72,7 @@ export default function LoginForm({ login, isLoading, error }: LoginFormProps) {
           <span>or</span>
         </div>
 
-        <Button type="button" variant="google" disabled={isLoading}>
+        <Button type="button" variant="secondary" disabled={isLoading}>
           Masuk Dengan Google
           <img src="/google-icon.webp" alt="Google Icon" className={styles.googleIcon} />
         </Button>

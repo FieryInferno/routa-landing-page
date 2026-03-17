@@ -1,7 +1,7 @@
-import styles from './Button.module.css'
+import styles from './Button.module.scss'
 
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'google'
+  variant?: 'primary' | 'secondary'
   children: React.ReactNode
   onClick?: () => void
   type?: 'button' | 'submit' | 'reset'
@@ -20,7 +20,6 @@ export default function Button({
   const variantClass = {
     primary: styles.primary,
     secondary: styles.secondary,
-    google: styles.google,
   }[variant]
 
   return (

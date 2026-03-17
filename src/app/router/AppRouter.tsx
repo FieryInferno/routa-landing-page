@@ -5,8 +5,9 @@ import HomePage from '../../features/marketing/ui/pages/HomePage'
 import LoginPage from '../../features/auth/ui/pages/LoginPage'
 import RegisterPage from '../../features/auth/ui/pages/RegisterPage'
 import Dashboard from '../../features/dashboard/ui/Dashboard.tsx'
+import StyleGuidePage from '../../features/style-guide/ui/pages/StyleGuide.tsx'
 
-type RouteAccess = 'public' | 'protected'
+type RouteAccess = 'public' | 'protected' | 'shared'
 
 interface RouteConfig {
   path: string
@@ -42,14 +43,19 @@ const routeConfigs: RouteConfig[] = [
   { path: '/login', element: <LoginPage />, access: 'public' },
   { path: '/register', element: <RegisterPage />, access: 'public' },
   { path: '/dashboard', element: <Dashboard />, access: 'protected' },
+  { path: '/202603170659-style-guide', element: <StyleGuidePage />, access: 'shared' },
 ]
 
 const publicRoutes = routeConfigs.filter((route) => route.access === 'public')
 const protectedRoutes = routeConfigs.filter((route) => route.access === 'protected')
+const sharedRoutes = routeConfigs.filter((route) => route.access === 'shared')
 
 const AppRouter = () => (
   <BrowserRouter>
     <Routes>
+      {sharedRoutes.map((route) => (
+        <Route key={route.path} path={route.path} element={route.element} />
+      ))}
       <Route element={<PublicOnlyRouteLayout />}>
         {publicRoutes.map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />

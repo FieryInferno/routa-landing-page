@@ -132,7 +132,7 @@ export default function RegisterForm({ register, isLoading, error }: RegisterFor
           <span>or</span>
         </div>
 
-        <Button type="button" variant="google" disabled={isLoading}>
+        <Button type="button" variant="secondary" disabled={isLoading}>
           Daftar Dengan Google
           <img src="/google-icon.webp" alt="Google Icon" className={styles.googleIcon} />
         </Button>
