@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react'
 import styles from './YourStats.module.scss'
 import Button from '../../../../shared/ui/Button/Button.component'
-import beginnerLeague from '../../../../../public/beginner-league.webp'
+import beginnerLeague from '../../../../../beginner-league.webp'
 
 type StatCardTone = 'clock' | 'check' | 'league'
 type StatCardVisual = StatCardTone | string

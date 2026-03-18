@@ -5,58 +5,6 @@ section {
   margin-bottom: 1rem;
 }
 
-.page {
-  min-height: 100dvh;
-  background: $grey-extra-light;
-}
-
-.main {
-  width: 100%;
-  padding: 1rem;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.menuButton {
-  border: 1px solid $grey-light;
-  background: $white;
-  color: #1f2937;
-  border-radius: 0.5rem;
-  width: 2.4rem;
-  height: 2.4rem;
-  display: grid;
-  place-items: center;
-  padding: 0;
-}
-
-.headerActions {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.planButton {
-  border: 0;
-  background: $grey-dark;
-  color: #f9fafb;
-  border-radius: 999px;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-}
-
-.avatar {
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #fdba74, #0ea5e9);
-}
-
 .contentSection {
   background: $grey-extra-light;
   padding: 0;
@@ -68,62 +16,9 @@ section {
   gap: 0.9rem;
 }
 
-@media (width >= $breakpoint-sm) {
-  .main {
-    padding: 1.25rem;
-  }
-}
-
-@media (width >= $breakpoint-lg) {
-  .main {
-    margin-left: 14rem;
-    width: calc(100% - 14rem);
-    padding: 1.5rem;
-    transition:
-      margin-left 0.2s ease,
-      width 0.2s ease;
-  }
-
-  .mainCollapsed {
-    margin-left: 4rem;
-    width: calc(100% - 4rem);
-  }
-
-  .menuButton {
-    display: none;
-  }
-}
-
 @media (width >= $breakpoint-wide) {
   .statsWrap {
     grid-template-columns: 1.5fr 1fr;
     align-items: stretch;
-  }
-}
-
-@media (width >= $breakpoint-xl) {
-  .main {
-    margin-left: 14rem;
-    width: calc(100% - 14rem);
-    padding: 1.8rem 1rem;
-  }
-
-  .mainCollapsed {
-    margin-left: 4rem;
-    width: calc(100% - 4rem);
-  }
-}
-
-@media (width >= $breakpoint-2xl) {
-  .main {
-    margin-left: 14rem;
-    width: calc(100% - 14rem);
-    padding: 2rem 2.25rem;
-    max-width: 96rem;
-  }
-
-  .mainCollapsed {
-    margin-left: 4rem;
-    width: calc(100% - 4rem);
   }
 }

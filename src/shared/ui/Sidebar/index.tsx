@@ -1,14 +1,7 @@
-import styles from './Sidebar.module.css'
-import SidebarIcon from './SidebarIcon.component'
-import { Link } from 'react-router-dom'
-
-const navItems = [
-  { label: 'Dashboard', isActive: true, icon: 'dashboard' },
-  { label: 'Generate Roadmap', isActive: false, icon: 'generate-roadmap' },
-  { label: 'My Roadmaps', isActive: false, icon: 'my-roadmaps' },
-  { label: 'Progress', isActive: false, icon: 'progress' },
-  { label: 'Lainnya', isActive: false, icon: 'more' },
-]
+import styles from './index.module.scss'
+import SidebarIcon from '../../../features/dashboard/ui/components/SidebarIcon.component'
+import { NavLink } from 'react-router-dom'
+import { sidebarNavItems } from '../../config/navigation'
 
 interface SidebarProps {
   isOpen: boolean
@@ -45,15 +38,21 @@ export default function Sidebar({ isOpen, isCollapsed, onToggleCollapse, onClose
         </div>
 
         <nav className={styles.nav} aria-label="Dashboard menu">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to="#"
-              className={`${styles.navItem} ${item.isActive ? styles.active : ''}`}
+          {sidebarNavItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              end
+              onClick={onClose}
+              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ''}`}
             >
-              <SidebarIcon iconName={item.icon} isActive={item.isActive} />
-              <span className={styles.navLabel}>{item.label}</span>
-            </Link>
+              {({ isActive }) => (
+                <>
+                  <SidebarIcon iconName={item.icon ?? ''} isActive={isActive} />
+                  <span className={styles.navLabel}>{item.label}</span>
+                </>
+              )}
+            </NavLink>
           ))}
         </nav>
 

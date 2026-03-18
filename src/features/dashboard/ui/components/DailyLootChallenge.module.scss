@@ -1,0 +1,371 @@
+@use '../../../../styles/_variable.scss' as *;
+
+// ─── Root ────────────────────────────────────────────────────
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $dark;
+  margin: 0;
+}
+
+// ─── Streak Card ─────────────────────────────────────────────
+.streakCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(90deg, #d2f6ff 0%, #f4fdff 56%, #dbdbdb 100%);
+  border-radius: 1rem;
+  padding: 0.875rem 1.25rem;
+  border-top-right-radius: 5rem;
+}
+
+.streakLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.chest {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+}
+
+.chest img {
+  width: 100%;
+  height: 100%;
+}
+
+.streakInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.streakLabel {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: $dark;
+  white-space: nowrap;
+}
+
+.streakSub {
+  font-size: 0.8125rem;
+  color: $grey-dark;
+  white-space: nowrap;
+}
+
+.streakDays {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.daySlot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dayDot {
+  width: 1.35rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+}
+
+.dayDotCompleted {
+  background: $primary;
+}
+
+.dayDotPending {
+  background: $grey-light;
+}
+
+.dayLabel {
+  font-size: 0.6875rem;
+  color: $grey-dark;
+  font-weight: 500;
+}
+
+.streakToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: $grey-medium;
+  padding: 0.25rem;
+  flex-shrink: 0;
+  line-height: 1;
+
+  &:hover {
+    color: $grey-dark;
+  }
+}
+
+// ─── Leaderboard ─────────────────────────────────────────────
+.leaderboard {
+  background: $white;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.leaderboardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.leaderboardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $dark;
+  margin: 0;
+}
+
+.regionFilters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.regionActive {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $dark;
+}
+
+.flagIcon {
+  font-size: 1rem;
+}
+
+.regionWorld {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: $grey-dark;
+
+  &:hover {
+    color: $dark;
+  }
+}
+
+.globeIcon {
+  font-size: 1rem;
+}
+
+// ─── Podium ───────────────────────────────────────────────────
+.podiumWrap {
+  background: $primary-extra-light;
+  padding: 1.5rem 1.25rem 1.25rem;
+}
+
+.podium {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Order: 2nd (left), 1st (center/taller), 3rd (right)
+.podiumSlot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.podiumSlot1 {
+  order: 2;
+  transform: translateY(-0.75rem);
+}
+
+.podiumSlot2 {
+  order: 1;
+}
+
+.podiumSlot3 {
+  order: 3;
+}
+
+.medalFrame {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+// Medal ring colors
+.medalFrame1 {
+  box-shadow:
+    0 0 0 3px #f59e0b,
+    0 0 0 6px #fde68a;
+}
+
+.medalFrame2 {
+  box-shadow:
+    0 0 0 3px #9ca3af,
+    0 0 0 6px #e5e7eb;
+}
+
+.medalFrame3 {
+  box-shadow:
+    0 0 0 3px #b45309,
+    0 0 0 6px #fde8c8;
+}
+
+.avatarImg {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarPlaceholder {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: $grey-light;
+}
+
+.rankBadge {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $white;
+
+  .medalFrame1 & {
+    background: #f59e0b;
+  }
+
+  .medalFrame2 & {
+    background: $grey-medium;
+  }
+
+  .medalFrame3 & {
+    background: #b45309;
+  }
+}
+
+.podiumUsername {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: $dark;
+  text-align: center;
+  margin-top: 0.625rem;
+}
+
+.podiumXp {
+  font-size: 0.75rem;
+  color: $grey-dark;
+}
+
+// ─── Rank List ───────────────────────────────────────────────
+.rankList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rankRow {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1.25rem;
+  border-top: 1px solid $grey-extra-light;
+}
+
+.rankNumber {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: $grey-dark;
+  width: 1.25rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.rankAvatar {
+  flex-shrink: 0;
+}
+
+.rankAvatarImg {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rankAvatarPlaceholder {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: $grey-light;
+}
+
+.rankUsername {
+  flex: 1;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $dark;
+}
+
+.rankXp {
+  font-size: 0.875rem;
+  color: $grey-dark;
+  font-weight: 500;
+}
+
+// ─── See More ────────────────────────────────────────────────
+.seeMoreBtn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  border-top: 1px solid $grey-extra-light;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  color: $grey-dark;
+  text-align: center;
+
+  &:hover {
+    color: $dark;
+    background: $grey-extra-light;
+  }
+}
