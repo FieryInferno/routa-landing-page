@@ -33,7 +33,9 @@ export const useLogin = (useCase: LoginUseCase): UseLoginResult => {
 
         setHttpAuthToken(loginEntity.accessToken)
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Login failed')
+        const message = err instanceof Error ? err.message : 'Login failed'
+        setError(message)
+        throw new Error(message)
       } finally {
         setIsLoading(false)
       }

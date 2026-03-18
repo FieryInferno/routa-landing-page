@@ -59,7 +59,7 @@ describe('useLogin', () => {
     const { result } = renderHook(() => useLogin(useCase))
 
     await act(async () => {
-      await result.current.login(credentials)
+      await expect(result.current.login(credentials)).rejects.toThrow('Login failed')
     })
 
     expect(result.current.isLoading).toBe(false)

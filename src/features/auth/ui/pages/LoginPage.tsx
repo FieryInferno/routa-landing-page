@@ -1,12 +1,20 @@
 import styles from './LoginPage.module.css'
+import { useNavigate } from 'react-router-dom'
 import ImageSlider from '../../../../shared/ui/ImageSlider/ImageSlider.component'
 import LoginForm from '../components/LoginForm/LoginForm'
 import { useAuthUseCase } from '../hooks/authUseCase.context'
 import { useLogin } from '../hooks/useLogin.hook'
+import type { LoginCredentials } from '../../domain/login.entity'
 
 export default function LoginPage() {
+  const navigate = useNavigate()
   const loginUseCase = useAuthUseCase()
   const { login, isLoading, error } = useLogin(loginUseCase)
+
+  const handleLogin = async (values: LoginCredentials) => {
+    await login(values)
+    navigate('/dashboard')
+  }
 
   return (
     <div className={styles.page}>
@@ -20,7 +28,7 @@ export default function LoginPage() {
           <p className={styles.subtitle}>Silahkan login dengan akun routa kamu!</p>
         </div>
 
-        <LoginForm login={login} isLoading={isLoading} error={error} />
+        <LoginForm login={handleLogin} isLoading={isLoading} error={error} />
       </div>
 
       <aside className={styles.visual}>

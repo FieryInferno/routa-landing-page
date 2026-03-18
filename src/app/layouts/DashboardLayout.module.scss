@@ -76,6 +76,10 @@
   .menuButton {
     display: none;
   }
+
+  .header {
+    justify-content: flex-end;
+  }
 }
 
 @media (width >= $breakpoint-xl) {
