@@ -9,6 +9,8 @@ describe('RegisterUseCase', () => {
     password: 'securePass123',
     firstName: 'John',
     lastName: 'Doe',
+    name: '',
+    birthDate: '',
   }
 
   const entity: RegisterEntity = {

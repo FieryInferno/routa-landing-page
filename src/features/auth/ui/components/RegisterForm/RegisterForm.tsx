@@ -16,10 +16,12 @@ interface RegisterFormProps {
 
 export default function RegisterForm({ register, isLoading, error }: RegisterFormProps) {
   const [formValues, setFormValues] = useState<RegisterFormValues>({
-    name: '',
     email: '',
-    birthDate: '',
     password: '',
+    firstName: '',
+    lastName: '',
+    name: '',
+    birthDate: '',
     confirmPassword: '',
   })
   const [clientError, setClientError] = useState<string | null>(null)

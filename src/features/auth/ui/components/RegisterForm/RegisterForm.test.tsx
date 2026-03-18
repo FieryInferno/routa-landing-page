@@ -23,6 +23,8 @@ describe('RegisterForm', () => {
       birthDate: '1995-06-15',
       password: 'secret123',
       confirmPassword: 'secret123',
+      firstName: '',
+      lastName: '',
     })
   })
 

@@ -20,6 +20,9 @@ describe('LoginUseCase', () => {
   it('returns login entity from repository', async () => {
     const repository: IAuthRepository = {
       login: vi.fn().mockResolvedValue(entity),
+      register: () => {
+        throw new Error('Not implemented')
+      },
     }
 
     const useCase = new LoginUseCase(repository)
@@ -33,6 +36,9 @@ describe('LoginUseCase', () => {
     const error = new Error('Login failed')
     const repository: IAuthRepository = {
       login: vi.fn().mockRejectedValue(error),
+      register: () => {
+        throw new Error('Not implemented')
+      },
     }
 
     const useCase = new LoginUseCase(repository)

@@ -10,6 +10,8 @@ describe('useRegister', () => {
     password: 'securePass123',
     firstName: 'John',
     lastName: 'Doe',
+    name: '',
+    birthDate: '',
   }
 
   const entity: RegisterEntity = {

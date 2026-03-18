@@ -57,6 +57,8 @@ describe('AuthRepositoryImpl - register', () => {
     password: 'securePass123',
     firstName: 'John',
     lastName: 'Doe',
+    name: '',
+    birthDate: '',
   }
 
   const dto: RegisterResponseDto = {
